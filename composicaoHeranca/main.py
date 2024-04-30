@@ -8,15 +8,15 @@ class Motor:
     def desligar(self):
         print(f"Motor {self.tipo} desligado.")
 
-class Carro(Motor):
-    def __init__(self, tipo, modelo):
-        super().__init__(tipo)
+class Carro:
+    def __init__(self, tipo_motor, modelo):
+        self.motor = Motor(tipo_motor)
         self.modelo = modelo
 
     def ligar(self):
-        super().ligar()
+        self.motor.ligar()
         print(f"Carro modelo {self.modelo} ligado.")
 
     def desligar(self):
-        super().desligar()
+        self.motor.desligar()
         print(f"Carro modelo {self.modelo} desligado.")

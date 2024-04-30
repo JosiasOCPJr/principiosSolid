@@ -1,8 +1,17 @@
-class CalculadoraArea:
-    def calcular_area(self, forma, *args):
-        if forma == "quadrado":
-            lado = args[0]
-            return lado * lado
-        elif forma == "circulo":
-            raio = args[0]
-            return 3.14 * raio * raio
+class Forma():
+    def calcular_area(self):
+        pass
+
+class Quadrado(Forma):
+    def __init__(self, lado):
+        self.lado = lado
+
+    def calcular_area(self):
+        return self.lado * self.lado
+
+class Circulo(Forma):
+    def __init__(self, raio):
+        self.raio = raio
+
+    def calcular_area(self):
+        return 3.14 * self.raio * self.raio
